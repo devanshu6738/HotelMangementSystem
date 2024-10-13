@@ -14,7 +14,7 @@ router.get('/',async(req,res)=>{
 router.post("/",async(req,res)=>{
     try {
         const data=req.body;
-        const newPerson=new personalbar(data);
+        const newPerson=new Person(data);
         const savedPerson=await newPerson.save();
         console.log("data saved")
         res.status(200).json(savedPerson);
